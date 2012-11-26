@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 1
+Bundle-Name: Nuxeo Presales Toolkit Test
+Bundle-SymbolicName: org.nuxeo.presales.prototyping.toolkit.operation.test;singleton:=true
+Bundle-Vendor: Nuxeo
+Bundle-Version: 1.0.0
+Nuxeo-Component: doc-type-contrib.xml

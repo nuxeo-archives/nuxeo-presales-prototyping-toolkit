@@ -1,0 +1,8 @@
+<component name="org.nuxeo.presales.prototyping.toolkit.operations.scripting.AddAdvancedFunctionsOperation">
+
+  <extension target="org.nuxeo.ecm.core.operation.OperationServiceComponent"
+    point="operations" >
+      <operation class="org.nuxeo.presales.prototyping.toolkit.operations.scripting.AddAdvancedFunctionsOperation" />
+   </extension>
+    
+</component>
