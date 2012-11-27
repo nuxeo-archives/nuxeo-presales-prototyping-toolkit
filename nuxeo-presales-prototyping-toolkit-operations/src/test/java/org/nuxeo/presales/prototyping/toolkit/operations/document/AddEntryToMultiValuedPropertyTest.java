@@ -35,7 +35,7 @@ import com.google.inject.Inject;
  */
 @RunWith(FeaturesRunner.class)
 @Features(CoreFeature.class)
-@Deploy({ "org.nuxeo.presales.prototyping.toolkit.operation.test:OSGI-INF/doc-type-contrib.xml", })
+@Deploy({ "org.nuxeo.presales.prototyping.toolkit.operation.test:OSGI-INF/doc-type-contrib.xml" })
 public class AddEntryToMultiValuedPropertyTest {
 
     @Inject
