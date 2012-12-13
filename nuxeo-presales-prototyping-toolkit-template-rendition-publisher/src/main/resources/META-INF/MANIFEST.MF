@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-Vendor: Nuxeo
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Bundle-Version: 5.6
+Bundle-Name: nuxeo-presales-toolkit-publish-template-operation
+Nuxeo-Component: OSGI-INF/extensions/org.nuxeo.presales.PublishTemplat
+ eRenditionOperation.xml
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: nuxeo-presales-toolkit-publish-template-operation
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+
