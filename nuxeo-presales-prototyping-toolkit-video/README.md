@@ -1,6 +1,7 @@
 ## Media Info Helper
 
 An helper class (MediaInfoHelper) to call mediainfo -i on video blobs and parse the result.
+Main methods are also exposed is 2 automation operations.
 
 ### mediainfo -i Structure
 A call to mediainfo -i gives a back a String List looking like :
@@ -129,6 +130,12 @@ Please be aware that the result of getSpecificMediaInfo is always the output Str
 
 ## Miscellaneous 
 - A command line contribution is deployed to make the call to mediainfo available.
+
+- The available automation operation are :
++ GetInfoFromMediaInfo that calls getProcessedMediaInfo
++ GetSpecificInformationFromMediaInfo that calls getSpecificMediaInfo
+The operations set the result into a context variable.
+
 
 ## About Nuxeo
 
