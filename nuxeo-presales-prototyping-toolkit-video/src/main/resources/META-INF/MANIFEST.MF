@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Require-Bundle: org.nuxeo.ecm.core.api,org.nuxeo.ecm.platform.commandl
+ ine.executor,org.nuxeo.ecm.core.convert
+Bundle-Vendor: Nuxeo
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Bundle-Version: 1.0.qualifier
+Bundle-Name: nuxeo-presales-prototyping-toolkit-video
+Nuxeo-Component: OSGI-INF/mediainfocommandline-contrib.xml,OSGI-INF/ex
+ tensions/org.nuxeo.presales.prototyping.toolkit.video.operations.GetI
+ nfoFromMediaInfo.xml,OSGI-INF/extensions/org.nuxeo.presales.prototypi
+ ng.toolkit.video.operations.GetSpecificInformationFromMediaInfo.xml
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.nuxeo.presales.prototyping.toolkit.video
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+

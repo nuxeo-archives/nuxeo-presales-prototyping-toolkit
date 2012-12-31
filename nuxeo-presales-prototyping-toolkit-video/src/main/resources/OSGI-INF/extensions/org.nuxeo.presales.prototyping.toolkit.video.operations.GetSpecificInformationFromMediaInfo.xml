@@ -1,0 +1,8 @@
+<component name="org.nuxeo.presales.prototyping.toolkit.video.operations.GetSpecificInformationFromMediaInfo">
+
+  <extension target="org.nuxeo.ecm.core.operation.OperationServiceComponent"
+    point="operations" >
+      <operation class="org.nuxeo.presales.prototyping.toolkit.video.operations.GetSpecificInformationFromMediaInfo" />
+   </extension>
+    
+</component>
