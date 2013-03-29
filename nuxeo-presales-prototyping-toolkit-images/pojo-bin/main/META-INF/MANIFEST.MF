@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-Vendor: Nuxeo
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Bundle-Version: 5.7-I20130303_0116
+Bundle-Name: nuxeo-presales-prototyping-toolkit-images
+Nuxeo-Component: OSGI-INF/extensions/org.nuxeo.presales.prototyping.to
+ olkit.images.GenericConverter.xml,OSGI-INF/extensions/conversions.xml
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: nuxeo-presales-prototyping-toolkit-images
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+
