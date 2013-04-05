@@ -2,8 +2,8 @@
 <project>
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.nuxeo.ecm.platform</groupId>
-    <artifactId>nuxeo-features-parent</artifactId>
+    <groupId>org.nuxeo</groupId>
+    <artifactId>nuxeo-addons-parent</artifactId>
     <version>5.7-SNAPSHOT</version>
   </parent>
   <groupId>org.nuxeo.presales</groupId>
@@ -15,12 +15,12 @@
     <module>nuxeo-presales-prototyping-toolkit-operations</module>
     <module>nuxeo-presales-prototyping-toolkit-we-publication</module>
     <module>nuxeo-presales-prototyping-toolkit-images</module>
-	<module>nuxeo-presales-prototyping-toolkit-template-rendition-publisher</module>
+	  <module>nuxeo-presales-prototyping-toolkit-template-rendition-publisher</module>
     <module>nuxeo-presales-prototyping-toolkit-video</module>
     <!-- module>nuxeo-presales-prototyping-toolkit-actions</module-->
   </modules>
   <properties>
-    <nuxeo.presales.prototyping.toolkit.version>5.6-SNAPSHOT</nuxeo.presales.prototyping.toolkit.version>
+    <nuxeo.presales.prototyping.toolkit.version>5.7-SNAPSHOT</nuxeo.presales.prototyping.toolkit.version>
   </properties>
   <dependencyManagement>
     <dependencies>
