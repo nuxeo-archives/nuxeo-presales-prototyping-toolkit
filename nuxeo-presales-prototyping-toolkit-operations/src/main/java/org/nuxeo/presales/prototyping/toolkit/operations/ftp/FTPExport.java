@@ -9,7 +9,7 @@ package org.nuxeo.presales.prototyping.toolkit.operations.ftp;
 import java.io.IOException;
 
 import org.apache.commons.vfs2.FileObject;
-import org.apache.commons.vfs2.FileSystemException;
+//import org.apache.commons.vfs2.FileSystemException;
 import org.apache.commons.vfs2.FileSystemManager;
 import org.apache.commons.vfs2.VFS;
 import org.nuxeo.ecm.automation.core.Constants;
@@ -23,7 +23,9 @@ import org.nuxeo.ecm.core.api.Blob;
 /**
  * @author karlharris
  */
-@Operation(id=FTPExport.ID, category=Constants.CAT_BLOB, label="Export file via ftp", description="")
+@Operation(id=FTPExport.ID, category=Constants.CAT_BLOB, label="Export file via ftp", 
+					description="Use Apache VFS Library to Export this file via FTP")
+
 public class FTPExport {
 
 
@@ -37,11 +39,11 @@ public class FTPExport {
 	String ftp_Path;
 	@Param(name="Filename")
 	String ftp_Filename;
-	@Param(name="Mime-type")
-	String mime_Type;
+	//@Param(name="Mime-type")
+	//-String mime_Type;
 	
 	
-    public static final String ID = "ftpExport";
+    public static final String ID = "FTPExport";
 
     @OperationMethod
     public Blob run(Blob input) {
@@ -53,9 +55,9 @@ public class FTPExport {
 	    		FileObject output = fsManager.createFileSystem(blobFile);
 	    		input.transferTo(output.getContent().getOutputStream());
 
-			} catch (FileSystemException e1) {
+			}/*catch (FileSystemException e1) {
 				e1.printStackTrace();
-			} catch (IOException e) {
+			}*/ catch (IOException e) {
 				e.printStackTrace();
 			}
       return input; 

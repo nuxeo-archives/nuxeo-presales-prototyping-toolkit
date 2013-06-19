@@ -6,12 +6,10 @@
     <artifactId>nuxeo-presales-prototyping-toolkit-parent</artifactId>
     <version>5.7-SNAPSHOT</version>
   </parent>
-
   <artifactId>nuxeo-presales-prototyping-toolkit-operations</artifactId>
   <name>Content Automation Operations Project for presales prototyping
     toolkit</name>
-  <description />
-
+  <description/>
   <dependencies>
     <dependency>
       <groupId>org.nuxeo.common</groupId>
@@ -44,6 +42,17 @@
     <dependency>
       <groupId>org.nuxeo.ecm.automation</groupId>
       <artifactId>nuxeo-automation-core</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>org.nuxeo.connect</groupId>
+          <artifactId>nuxeo-connect-client</artifactId>
+        </exclusion>
+      </exclusions>
+    </dependency>
+    <dependency>
+      <groupId>org.nuxeo.ecm.automation</groupId>
+      <artifactId>nuxeo-automation-test</artifactId>
+      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.nuxeo.ecm.platform</groupId>
@@ -56,8 +65,8 @@
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-vfs2</artifactId>
-      <!-- <version>2.0</version> -->
     </dependency>
+
     <dependency>
       <groupId>org.nuxeo.ecm.platform</groupId>
       <artifactId>nuxeo-platform-directory-core</artifactId>
@@ -103,6 +112,27 @@
       <artifactId>nuxeo-runtime-test</artifactId>
       <scope>test</scope>
     </dependency>
+    <dependency>
+    <groupId>org.mockftpserver</groupId>
+    <artifactId>MockFtpServer</artifactId>
+    <scope>test</scope>
+  </dependency>
+    <dependency>
+      <groupId>commons-lang</groupId>
+      <artifactId>commons-lang</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>commons-logging</groupId>
+      <artifactId>commons-logging</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>javax.mail</groupId>
+      <artifactId>mail</artifactId>
+    </dependency>
+    <dependency>
+    	<groupId>commons-net</groupId>
+    	<artifactId>commons-net</artifactId>
+     </dependency>
   </dependencies>
   <build>
     <plugins>

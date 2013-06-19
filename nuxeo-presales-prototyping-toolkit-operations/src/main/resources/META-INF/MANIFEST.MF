@@ -6,15 +6,8 @@ Bundle-Version: 1.0.qualifier
 Bundle-Name: nuxeo-presales-prototyping-toolkit-operations
 Bundle-ManifestVersion: 2
 Nuxeo-Component: OSGI-INF/extensions/org.nuxeo.presales.prototyping.to
- olkit.operations.document.AddEntryToMultiValuedProperty.xml,OSGI-INF/
- extensions/org.nuxeo.presales.prototyping.toolkit.operations.document
- .CreateProxyLive.xml,OSGI-INF/extensions/org.nuxeo.presales.prototypi
- ng.toolkit.operations.document.GetLiveDocument.xml,OSGI-INF/extension
- s/org.nuxeo.presales.prototyping.toolkit.operations.document.RemoveEn
- tryOfMultiValuedProperty.xml,OSGI-INF/extensions/org.nuxeo.presales.p
- rototyping.toolkit.operations.notification.AdvancedSendEmail.xml,OSGI
- -INF/extensions/org.nuxeo.presales.prototyping.toolkit.operations.scr
- ipting.AddAdvancedFunctionsOperation.xml
+ olkit.operations.ftp.TestOperqtion.xml,OSGI-INF/extensions/org.nuxeo.
+ presales.prototyping.toolkit.operations.ftp.FTPExportII.xml
 Bundle-SymbolicName: org.nuxeo.presales.prototyping.toolkit.operation
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 

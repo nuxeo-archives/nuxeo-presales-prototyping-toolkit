@@ -15,7 +15,7 @@
     <module>nuxeo-presales-prototyping-toolkit-operations</module>
     <module>nuxeo-presales-prototyping-toolkit-we-publication</module>
     <module>nuxeo-presales-prototyping-toolkit-images</module>
-	  <module>nuxeo-presales-prototyping-toolkit-template-rendition-publisher</module>
+    <module>nuxeo-presales-prototyping-toolkit-template-rendition-publisher</module>
     <module>nuxeo-presales-prototyping-toolkit-video</module>
     <!-- module>nuxeo-presales-prototyping-toolkit-actions</module-->
   </modules>
@@ -24,31 +24,54 @@
   </properties>
   <dependencyManagement>
     <dependencies>
-    <dependency>
-      <groupId>org.nuxeo.presales</groupId>
-      <artifactId>nuxeo-presales-prototyping-toolkit-operations</artifactId>
-      <version>${nuxeo.presales.prototyping.toolkit.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.nuxeo.presales</groupId>
-      <artifactId>nuxeo-presales-prototyping-toolkit-actions</artifactId>
-      <version>${nuxeo.presales.prototyping.toolkit.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.nuxeo.presales</groupId>
-      <artifactId>nuxeo-presales-prototyping-toolkit-we-publication</artifactId>
-      <version>${nuxeo.presales.prototyping.toolkit.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.nuxeo.presales</groupId>
-      <artifactId>nuxeo-presales-prototyping-toolkit-video</artifactId>
-      <version>${nuxeo.presales.prototyping.toolkit.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>org.nuxeo.presales</groupId>
-      <artifactId>nuxeo-presales-prototyping-toolkit-images</artifactId>
-      <version>${nuxeo.presales.prototyping.toolkit.version}</version>
-    </dependency>
+      <dependency>
+	<groupId>org.apache.commons</groupId>
+	<artifactId>commons-vfs2-project</artifactId>
+        <type>pom</type>
+	<scope>import</scope>
+	<version>2.0</version>
+      </dependency>
+      <dependency>
+	<groupId>org.nuxeo.runtime</groupId>
+	<artifactId>nuxeo-launcher-commons</artifactId>
+	<version>${project.version}</version>
+	<exclusions>
+          <exclusion>
+            <groupId>org.nuxeo.connect</groupId>
+            <artifactId>nuxeo-connect-client</artifactId>
+          </exclusion>
+	</exclusions>
+      </dependency>
+      <dependency>
+	<groupId>org.nuxeo.presales</groupId>
+	<artifactId>nuxeo-presales-prototyping-toolkit-operations</artifactId>
+	<version>${nuxeo.presales.prototyping.toolkit.version}</version>
+      </dependency>
+      <dependency>
+	<groupId>org.nuxeo.presales</groupId>
+	<artifactId>nuxeo-presales-prototyping-toolkit-actions</artifactId>
+	<version>${nuxeo.presales.prototyping.toolkit.version}</version>
+      </dependency>
+      <dependency>
+	<groupId>org.nuxeo.presales</groupId>
+	<artifactId>nuxeo-presales-prototyping-toolkit-we-publication</artifactId>
+	<version>${nuxeo.presales.prototyping.toolkit.version}</version>
+      </dependency>
+      <dependency>
+	<groupId>org.nuxeo.presales</groupId>
+	<artifactId>nuxeo-presales-prototyping-toolkit-video</artifactId>
+	<version>${nuxeo.presales.prototyping.toolkit.version}</version>
+      </dependency>
+      <dependency>
+	<groupId>org.nuxeo.presales</groupId>
+	<artifactId>nuxeo-presales-prototyping-toolkit-images</artifactId>
+	<version>${nuxeo.presales.prototyping.toolkit.version}</version>
+      </dependency>
+      <dependency>
+    	<groupId>org.mockftpserver</groupId>
+    	<artifactId>MockFtpServer</artifactId>
+    	<version>2.4</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
   <repositories>
@@ -56,10 +79,10 @@
       <id>nuxeo-studio</id>
       <url>https://connect.nuxeo.com/nuxeo/site/studio/maven</url>
       <releases>
-          <enabled>true</enabled>
+        <enabled>true</enabled>
       </releases>
       <snapshots>
-          <enabled>true</enabled>
+        <enabled>true</enabled>
       </snapshots>
     </repository>
   </repositories>
