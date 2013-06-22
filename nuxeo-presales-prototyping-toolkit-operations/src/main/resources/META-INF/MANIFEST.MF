@@ -6,8 +6,9 @@ Bundle-Version: 1.0.qualifier
 Bundle-Name: nuxeo-presales-prototyping-toolkit-operations
 Bundle-ManifestVersion: 2
 Nuxeo-Component: OSGI-INF/extensions/org.nuxeo.presales.prototyping.to
- olkit.operations.ftp.TestOperqtion.xml,OSGI-INF/extensions/org.nuxeo.
- presales.prototyping.toolkit.operations.ftp.FTPExportII.xml
+ olkit.operations.ftp.BlobExport.xml,OSGI-INF/extensions/org.nuxeo.pre
+ sales.prototyping.toolkit.operations.ftp.TestII.xml,OSGI-INF/extensio
+ ns/org.nuxeo.presales.prototyping.toolkit.operations.ftp.Test3.xml
 Bundle-SymbolicName: org.nuxeo.presales.prototyping.toolkit.operation
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 

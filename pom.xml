@@ -49,6 +49,13 @@
       </dependency>
       <dependency>
 	<groupId>org.nuxeo.presales</groupId>
+	<artifactId>nuxeo-presales-prototyping-toolkit-operations</artifactId>
+	<version>1.0</version>
+        <classifier>blobs</classifier>
+        <type>zip</type>
+      </dependency>
+      <dependency>
+	<groupId>org.nuxeo.presales</groupId>
 	<artifactId>nuxeo-presales-prototyping-toolkit-actions</artifactId>
 	<version>${nuxeo.presales.prototyping.toolkit.version}</version>
       </dependency>
