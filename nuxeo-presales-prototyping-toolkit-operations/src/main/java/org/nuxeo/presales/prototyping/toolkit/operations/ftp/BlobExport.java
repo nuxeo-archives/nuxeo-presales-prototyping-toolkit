@@ -17,13 +17,13 @@ import org.apache.commons.vfs2.FileSystemManager;
 import org.apache.commons.vfs2.FileSystemOptions;
 import org.apache.commons.vfs2.VFS;
 import org.apache.commons.vfs2.provider.ftp.FtpFileSystemConfigBuilder;
-import org.nuxeo.ecm.automation.client.Session;
 import org.nuxeo.ecm.automation.core.Constants;
 import org.nuxeo.ecm.automation.core.annotations.Context;
 import org.nuxeo.ecm.automation.core.annotations.Operation;
 import org.nuxeo.ecm.automation.core.annotations.OperationMethod;
 import org.nuxeo.ecm.automation.core.annotations.Param;
 import org.nuxeo.ecm.automation.core.collectors.DocumentModelCollector;
+import org.nuxeo.ecm.core.api.CoreSession;
 import org.nuxeo.ecm.core.api.Blob;
 import org.nuxeo.ecm.core.api.DocumentModel;
 import org.nuxeo.ecm.core.api.blobholder.BlobHolder;
@@ -49,11 +49,9 @@ public class BlobExport {
 
 	protected Log log = LogFactory.getLog(BlobExport.class);
 
-	@Context
-	Session session;
+	protected @Context CoreSession session;
 
-	@Param(name = "URI")
-	String uriParams;
+	protected @Param(name = "URI") String uriParams;
 
 	@OperationMethod(collector = DocumentModelCollector.class)
 	public DocumentModel run(DocumentModel input) throws Exception {
