@@ -4,19 +4,13 @@
   <parent>
     <groupId>org.nuxeo.presales</groupId>
     <artifactId>nuxeo-presales-prototyping-toolkit-parent</artifactId>
-    <version>5.7-SNAPSHOT</version>
+    <version>5.7.2-SNAPSHOT</version>
   </parent>
   <artifactId>nuxeo-presales-prototyping-toolkit-operations</artifactId>
   <name>Content Automation Operations Project for presales prototyping
     toolkit</name>
   <description/>
   <dependencies>
-    <dependency>
-      <groupId>org.nuxeo.presales</groupId>
-      <artifactId>nuxeo-presales-prototyping-toolkit-operations</artifactId>
-      <type>zip</type>
-      <classifier>blobs</classifier>
-    </dependency>
     <dependency>
       <groupId>org.nuxeo.common</groupId>
       <artifactId>nuxeo-common</artifactId>
