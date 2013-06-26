@@ -6,12 +6,12 @@ package org.nuxeo.presales.prototyping.toolkit.operations.notification;
  * a jpeg image and a Quicktime (mov) video blob. To run this test you will need an FTP server AND File access on the localhost machine.
  * using an account with username = username and password = password
  *  (yes, the actual username and password are the same as the labels). There are a total of 4 tests available.
- *  
+ *
  *  1. Transfer a small text file to the <Eclipse Root>/target/TestTextFile.txt  folder on the local host.
  *  2. Tranfer a jpeg image to an ftp server using  ftp://username:password@localhost/Downloads/unittestImage.jpeg URI.
  *  3. Tranfer a mov(Quicktime) image to an ftp server using ftp://username:password@localhost/Downloads/unittestVideo.jpeg URI.
  *  4. Transfer a dynamically generated list of all 3 files above using ftp server using ftp://username:password@localhost/Downloads/*  URI.
- *  
+ *
  *  Note: The jpeg and mov files are referenced by a Maven dependency and stored in a .zip file. Maven will expand the jpeg and mov file and
  *  place them in a <Eclipse Root>/target/blobs folder. The small text file is generated when the test is initialized.
 
@@ -19,7 +19,6 @@ package org.nuxeo.presales.prototyping.toolkit.operations.notification;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.ArrayList;
 
 import junit.framework.Assert;
 
@@ -115,9 +114,9 @@ public class CanTransferFiles {
 		protected final String file;
 
 		protected TestBlob (Blob blob, String params,String fileSpec){
-			this.blobHere = blob;
+			blobHere = blob;
 			this.params = params;
-			this.file = fileSpec;
+			file = fileSpec;
 		}
 	}
 

@@ -4,7 +4,7 @@
   <parent>
     <groupId>org.nuxeo</groupId>
     <artifactId>nuxeo-addons-parent</artifactId>
-    <version>5.7-SNAPSHOT</version>
+    <version>5.7.2-SNAPSHOT</version>
   </parent>
   <groupId>org.nuxeo.presales</groupId>
   <artifactId>nuxeo-presales-prototyping-toolkit-parent</artifactId>
@@ -20,7 +20,7 @@
     <!-- module>nuxeo-presales-prototyping-toolkit-actions</module-->
   </modules>
   <properties>
-    <nuxeo.presales.prototyping.toolkit.version>5.7-SNAPSHOT</nuxeo.presales.prototyping.toolkit.version>
+    <nuxeo.presales.prototyping.toolkit.version>5.7.2-SNAPSHOT</nuxeo.presales.prototyping.toolkit.version>
   </properties>
   <dependencyManagement>
     <dependencies>

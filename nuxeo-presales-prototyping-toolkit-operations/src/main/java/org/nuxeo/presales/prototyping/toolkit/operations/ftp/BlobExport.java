@@ -50,11 +50,9 @@ public class BlobExport {
 
 	protected Log log = LogFactory.getLog(BlobExport.class);
 
-	@Context
-	CoreSession coresession;
+	protected @Context CoreSession session;
 
-	@Param(name = "URI")
-	String uriParams;
+	protected @Param(name = "URI") String uriParams;
 
 	@OperationMethod(collector = DocumentModelCollector.class)
 	public DocumentModel run(DocumentModel input) throws Exception {
