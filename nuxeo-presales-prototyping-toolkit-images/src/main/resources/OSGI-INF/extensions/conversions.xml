@@ -28,7 +28,7 @@
     point="command">
     <command name="imageOverlay" enabled="true">
       <commandLine>convert</commandLine>
-      <parameterString>#{sourceFilePath} -gravity #{gravity} -fill #{textColor}  -stroke '#A84100' -strokewidth 1 -pointsize #{textSize} -annotate #{textRotation}x#{textRotation}+#{xOffset}+#{yOffset} #{textValue} "#{targetFilePath}"</parameterString>
+      <parameterString>#{sourceFilePath} -gravity #{gravity} -fill #{textColor}  -stroke '#070536' -strokewidth 2 -pointsize #{textSize} -annotate #{textRotation}x#{textRotation}+#{xOffset}+#{yOffset} #{textValue} "#{targetFilePath}"</parameterString>
       <installationDirective>You need to install ImageMagick.</installationDirective>
     </command>
     <command name="watermarking" enabled="true">
