@@ -29,11 +29,12 @@ import org.nuxeo.ecm.core.api.DocumentModel;
 import org.nuxeo.ecm.core.api.blobholder.BlobHolder;
 
 /**
- * @author stephane lancoine, karlharris
+ * @author stephane lancoin, karl harris
  * 
  * This Operation takes a single Parameter. A URI of the form <protocol>://<username>:<password>@hostname/<folder>/filename.
  * Takes as input a single Document or a List of Documents each document must be of type File and contain a blob of bytes. The Operation
- * will uses the Apache VFS software to transfer the file using the <protocol> named in the URI. 
+ * will uses the Apache VFS software to transfer the file using the <protocol> named in the URI.
+ * Check http://commons.apache.org/proper/commons-vfs/filesystems.html for other protocols in this library.
  * 
  */
 
