@@ -18,18 +18,18 @@ import org.nuxeo.ecm.core.api.DocumentRef;
 /**
  * @author karlharris
  */
-@Operation(id=DocumentBlobExport.ID, category=Constants.CAT_DOCUMENT, label="Document Blob Export", description="Export the input Document Blob file. " +
+@Operation(id=DocumentBlobExport.ID, category=Constants.CAT_DOCUMENT, label="Document Blob Export", description="Export the input Blob file. " +
 														"Use URI format: <protocol>://<username>:<password>@hostname/<folder>/filename." +
-														"The operation returns the input Document unchanged")
-public class DocumentBlobExport extends BlobExport {
+														"The operation returns the input blob unchanged")
+public class DocumentBlobExport extends BlobExport{
 
     public static final String ID = "DocumentBlobExport";
-
-    @Param (name="URI") String uri;
     
+    @Param(name="URI") String uri;
+
     @OperationMethod(collector=DocumentModelCollector.class)
-    public DocumentModel run(DocumentModel input) throws Exception {
-      return transfer (input,uri); 
+    public DocumentModel run(DocumentModel input) throws Exception{
+      return transfer(input,uri); 
     }    
 
 }
