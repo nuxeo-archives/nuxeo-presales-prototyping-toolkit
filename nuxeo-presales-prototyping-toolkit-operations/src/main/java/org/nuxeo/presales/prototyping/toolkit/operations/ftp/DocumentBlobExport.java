@@ -18,9 +18,9 @@ import org.nuxeo.ecm.core.api.DocumentRef;
 /**
  * @author karlharris
  */
-@Operation(id=DocumentBlobExport.ID, category=Constants.CAT_DOCUMENT, label="Document Blob Export", description="Export the input Blob file. " +
+@Operation(id=DocumentBlobExport.ID, category=Constants.CAT_DOCUMENT, label="Document Blob Export", description="Export the Document's Blob file. " +
 														"Use URI format: <protocol>://<username>:<password>@hostname/<folder>/filename." +
-														"The operation returns the input blob unchanged")
+														"The operation returns the Document unchanged")
 public class DocumentBlobExport extends BlobExport{
 
     public static final String ID = "DocumentBlobExport";
