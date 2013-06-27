@@ -22,12 +22,12 @@ import java.io.InputStream;
 
 import junit.framework.Assert;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.nuxeo.ecm.automation.client.Constants;
 import org.nuxeo.ecm.automation.client.Session;
 import org.nuxeo.ecm.automation.client.jaxrs.impl.HttpAutomationClient;
-import org.nuxeo.ecm.automation.client.model.Blob;
 import org.nuxeo.ecm.automation.client.model.DocRef;
 import org.nuxeo.ecm.automation.client.model.DocRefs;
 import org.nuxeo.ecm.automation.client.model.Document;
@@ -40,7 +40,8 @@ import org.nuxeo.ecm.core.api.DocumentModel;
 import org.nuxeo.ecm.core.api.impl.blob.FileBlob;
 import org.nuxeo.ecm.core.test.DefaultRepositoryInit;
 import org.nuxeo.ecm.core.test.annotations.RepositoryConfig;
-import org.nuxeo.presales.prototyping.toolkit.operations.ftp.BlobExport;
+import org.nuxeo.presales.prototyping.toolkit.operations.ftp.ExportBlob;
+import org.nuxeo.presales.prototyping.toolkit.operations.ftp.DocumentBlobExport;
 import org.nuxeo.runtime.test.runner.Deploy;
 import org.nuxeo.runtime.test.runner.Features;
 import org.nuxeo.runtime.test.runner.FeaturesRunner;
@@ -55,6 +56,34 @@ import com.google.inject.Inject;
 @RepositoryConfig(init=CanTransferFiles.MyRepositoryInit.class)
 public class CanTransferFiles {
 
+	protected static final String host = "localhost";
+	protected static final String user = "username";
+	protected static final String password = "password";
+	
+	protected static final String FILETEXTNAME = "TestBlobTextFile";
+	protected static final String FILETEXTPATH = "/default-domain";
+	protected static final String FILETEXTCONTENTID = "text-file";
+	protected static final String FILETEXTID = ExportBlob.ID;
+	protected static final String FILETEXTURI ="ftp://"+user+":"+password+"@"+host+"/Downloads/unittestTextFile.txt";
+	
+	protected static final String FILEIMAGENAME = "TestBlobImageFile";
+	protected static final String FILEIMAGEPATH ="/default-domain";
+	protected static final String FILEIMAGECONTENTID = "image-file";
+	protected static final String FILEIMAGEID = ExportBlob.ID;
+	protected static final String FILEIMAGEURI ="ftp://"+user+":"+password+"@"+host+"/Downloads/unittestImageFile.jpg";
+	
+	protected static final String FILEVIDEONAME = "TestBlobVideoFile";
+	protected static final String FILEVIDEOPATH ="/default-domain";
+	protected static final String FILEVIDEOCONTENTID = "video-file";
+	protected static final String FILEVIDEOID = ExportBlob.ID;
+	protected static final String FILEVIDEOURI =	"ftp://"+user+":"+password+"@"+host+"/Downloads/unittestVideoFile.mov";
+	
+
+	protected static final String DOCTEXTID = DocumentBlobExport.ID;
+	protected static final String DOCTEXTURI =	"ftp://"+user+":"+password+"@"+host+"/Downloads/unittestTextDoc.txt";
+	protected static final String DOCIMAGEURI =	"ftp://"+user+":"+password+"@"+host+"/Downloads/unittestImageDoc.jpg";
+	protected static final String DOCVIDEOURI =	"ftp://"+user+":"+password+"@"+host+"/Downloads/unittestVideoDoc.mov";
+	
 	protected static final String BLOBS_IMG_0216_JPG = "blobs/IMG_0216.JPG";
 
 	protected static final String BLOBS_IMG_0217_MOV = "blobs/IMG_0217.MOV";
@@ -65,110 +94,119 @@ public class CanTransferFiles {
 		public void populate(CoreSession session) throws ClientException {
 			super.populate(session);
 
-			DocumentModel text = session.createDocumentModel("/default-domain", "text-file", "File");
-			text.setPropertyValue("file:content", new org.nuxeo.ecm.core.api.impl.blob.StringBlob("Nice, it's working!!!"));
-			text.setPropertyValue("file:filename", "TestBlobText");
-			text = session.createDocument(text);
-
-			DocumentModel img = session.createDocumentModel("/default-domain", "img-file", "File");
-			img.setPropertyValue("file:filename", "TestBlobImage");
-
+			//File Test Text
+			
+			DocumentModel fileText = session.createDocumentModel(FILETEXTPATH, FILETEXTCONTENTID, "File");
+			fileText.setPropertyValue("file:content", new org.nuxeo.ecm.core.api.impl.blob.StringBlob("Nice, it's working!!!"));
+			fileText.setPropertyValue("file:filename", FILETEXTNAME);
+			fileText = session.createDocument(fileText);
+			
+			//File Image(JPEG) Test
+			
+			DocumentModel fileImg = session.createDocumentModel(FILEIMAGEPATH, FILEIMAGECONTENTID, "File");
+			fileImg.setPropertyValue("file:filename", FILEIMAGENAME);
 			InputStream jpgBlob = CanTransferFiles.class.getClassLoader().getResourceAsStream(BLOBS_IMG_0216_JPG);
 			Assert.assertTrue(jpgBlob != null);
 			try {
-				img.setPropertyValue("file:content", new FileBlob(jpgBlob));
+				fileImg.setPropertyValue("file:content", new FileBlob(jpgBlob));
 			} catch (IOException e1) {
 
 			}
-			img = session.createDocument(img);
+			fileImg = session.createDocument(fileImg);
+			
+			//File Video(MOV) Test
 
-			DocumentModel video = session.createDocumentModel("/default-domain", "video-file", "File");
-			video.setPropertyValue("file:filename", "TestBlobVideo");
+			DocumentModel fileVideo = session.createDocumentModel(FILEVIDEOPATH, FILEVIDEOCONTENTID, "File");
+			fileVideo.setPropertyValue("file:filename", FILEVIDEONAME);
 
-			InputStream videoBlob = CanTransferFiles.class.getClassLoader().getResourceAsStream(BLOBS_IMG_0217_MOV);
-			Assert.assertTrue(videoBlob != null);
+			InputStream fileVideoBlob = CanTransferFiles.class.getClassLoader().getResourceAsStream(BLOBS_IMG_0217_MOV);
+			Assert.assertTrue(fileVideoBlob != null);
 			try {
-				video.setPropertyValue("file:content", new FileBlob(videoBlob));
+				fileVideo.setPropertyValue("file:content", new FileBlob(fileVideoBlob));
 			} catch (IOException e) {
 
 			}
-			video = session.createDocument(video);
+			fileVideo = session.createDocument(fileVideo);
+			
 		}
 	}
 
-	protected @Inject
-	HttpAutomationClient client;
+	//protected @Inject HttpAutomationClient client;
 
-	protected @Inject
-	Session clientSession;
+	protected @Inject Session clientSession;
 
-	protected @Inject CoreSession coreSession;
+	//protected @Inject CoreSession coreSession;
 
-	protected Documents docList = new Documents();
+	//protected Documents docList = new Documents();
 
 
-	protected static class TestBlob{
-
-		protected final String params;
-		protected final Blob blobHere;
-		protected final String file;
-
-		protected TestBlob (Blob blob, String params,String fileSpec){
-			blobHere = blob;
-			this.params = params;
-			file = fileSpec;
-		}
-	}
-
-	protected String getVideoParams(){
-		String result =  "ftp://username:password@localhost/Downloads/unittestVideo.mov";
-		return result;
-	}
-	protected String getJPEGParams(){
-		String result =  "ftp://username:password@localhost/Downloads/unittestImage.jpg";
-		return result;
-	}
-	protected String getListParams(){
+/*	protected String getListFileParams(){
 		String result =  "ftp://username:password@localhost/Downloads/*";
 		return result;
-	}
-	protected String getFileParams(){
+	}*/
+/*	protected String getTextFileParams(){
 		String targetPath = guessTargetPath();
 		String result = "file:".concat(targetPath);
 		result = result.concat("TestTextFile.txt");
 		return result;
-	}
+	}*/
+	
+/*	protected String getListDocParams(){
+		String result =  "ftp://username:password@localhost/Downloads/*";
+		return result;
+	}*/
+	
+/*	protected String getTextDocParams(){
+		String targetPath = guessTargetPath();
+		String result = "file:".concat(targetPath);
+		result = result.concat("TestTextDoc.txt");
+		return result;
+	}*/
 
-
-	protected String guessTargetPath() {
+/*	protected String guessTargetPath() {
 		String myclasspath = CanTransferFiles.class.getCanonicalName().replace('.', '/').concat(".class");
 		String mypath = CanTransferFiles.class.getClassLoader().getResource(myclasspath).getFile();
 		return mypath.substring(0, mypath.length()-myclasspath.length()).concat("../");
-	}
+	}*/
 
 
-	@Test
-	public void canTransferDocFile() throws Exception {
-
-		PathRef p1 = new PathRef("/default-domain/text-file");
+	protected void transfer (String path, String id, String uri) throws Exception {
+		PathRef p1 = new PathRef(path);
 		Assert.assertTrue(p1 !=null);
-		clientSession.newRequest(BlobExport.ID).setInput(p1).set("URI", getFileParams() ).setHeader(Constants.HEADER_NX_VOIDOP, "true").execute();
+		clientSession.newRequest(id).setInput(p1).set("URI", uri )
+		.setHeader(Constants.HEADER_NX_VOIDOP, "true")
+		.execute();
+	}
+
+	
+	@Test
+	public void canTransferTextFile() throws Exception {
+		transfer(FILETEXTPATH+"/"+FILETEXTCONTENTID,FILETEXTID,FILETEXTURI);
+	}
+	@Test
+	public void canTransferIMAGEFile() throws Exception {
+		transfer(FILEIMAGEPATH+"/"+FILEIMAGECONTENTID,FILEIMAGEID,FILEIMAGEURI);
+	}
+	@Test
+	public void canTransferVIDEOFile() throws Exception {
+		transfer(FILEVIDEOPATH+"/"+FILEVIDEOCONTENTID,FILEVIDEOID,FILEVIDEOURI);
 	}
 
 	@Test
-	public void canTransferDocJPEG() throws Exception {
-		PathRef p1 = new PathRef("/default-domain/img-file");
-		Assert.assertTrue(p1 !=null);
-		clientSession.newRequest(BlobExport.ID).setInput(p1).set("URI", getJPEGParams()).setHeader(Constants.HEADER_NX_VOIDOP, "true").execute();
+	public void canTransferTextDoc() throws Exception {
+		transfer(FILETEXTPATH+"/"+FILETEXTCONTENTID,DOCTEXTID,DOCTEXTURI);
 	}
 	@Test
-	public void canTransferDocMOV() throws Exception {
-		PathRef p1 = new PathRef("/default-domain/video-file");
-		Assert.assertTrue(p1 !=null);
-		clientSession.newRequest(BlobExport.ID).setInput(p1).set("URI", getVideoParams() ).setHeader(Constants.HEADER_NX_VOIDOP, "true").execute();
+	public void canTransferIMAGEDoc() throws Exception {
+		transfer(FILEIMAGEPATH+"/"+FILEIMAGECONTENTID,DOCTEXTID,DOCIMAGEURI);
 	}
-
 	@Test
+	public void canTransferVIDEODoc() throws Exception {
+		transfer(FILEVIDEOPATH+"/"+FILEVIDEOCONTENTID,DOCTEXTID,DOCVIDEOURI);
+	}
+ /*
+  * @Test
+	@Ignore
 	public void canTransferDocList() throws Exception {
 		Documents docs = (Documents) clientSession.newRequest("Document.Query")
 				.set("query", "SELECT * FROM Document WHERE ecm:primaryType = 'File'")
@@ -181,12 +219,14 @@ public class CanTransferFiles {
 			refs.add(new DocRef(x.getId()));
 		}
 
-		clientSession.newRequest(BlobExport.ID)
+		clientSession.newRequest(ExportBlob.ID)
 		.setInput(refs)
 		.set("URI", getListParams() )
 		.setHeader(Constants.HEADER_NX_VOIDOP, "true")
 		.execute();
 
 	}
+	*/
+	
 
 }

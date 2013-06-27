@@ -17,13 +17,6 @@ import org.apache.commons.vfs2.FileSystemManager;
 import org.apache.commons.vfs2.FileSystemOptions;
 import org.apache.commons.vfs2.VFS;
 import org.apache.commons.vfs2.provider.ftp.FtpFileSystemConfigBuilder;
-import org.nuxeo.ecm.automation.core.Constants;
-import org.nuxeo.ecm.automation.core.annotations.Context;
-import org.nuxeo.ecm.automation.core.annotations.Operation;
-import org.nuxeo.ecm.automation.core.annotations.OperationMethod;
-import org.nuxeo.ecm.automation.core.annotations.Param;
-import org.nuxeo.ecm.automation.core.collectors.DocumentModelCollector;
-import org.nuxeo.ecm.core.api.CoreSession;
 import org.nuxeo.ecm.core.api.Blob;
 import org.nuxeo.ecm.core.api.DocumentModel;
 import org.nuxeo.ecm.core.api.blobholder.BlobHolder;
@@ -39,29 +32,36 @@ import org.nuxeo.ecm.core.api.blobholder.BlobHolder;
  */
 
 
-@Operation(id = BlobExport.ID, category = Constants.CAT_DOCUMENT, label = "BlobExport", description = "Export Blob from a Document use URI format:<protocol>://<username>:<password>@hostname/<folder>/filename " )
-public class BlobExport {
 
-	public static final String ID = "BlobExport";
+public class BlobExport {
 
 	protected static FileSystemOptions defaultOpts = new FileSystemOptions();
 
 	protected static FileSystemOptions ftpOpts = initFTP();
 
 	protected Log log = LogFactory.getLog(BlobExport.class);
-
-	protected @Context CoreSession session;
-
-	protected @Param(name = "URI") String uriParams;
-
-	@OperationMethod(collector = DocumentModelCollector.class)
-	public DocumentModel run(DocumentModel input) throws Exception {
+	
+	public Blob transfer(Blob blob, String uriParams) throws Exception {
+		
+		transferVFS(blob,uriParams);
+		
+		return blob;
+	}
+	
+	public DocumentModel transfer(DocumentModel input, String uriParams) throws Exception {
 		BlobHolder blobHolder = input.getAdapter(BlobHolder.class);
 		if (blobHolder == null) {
 			throw new IllegalArgumentException(
 					"wrong input, not a blob holder " + input.getPathAsString());
 		}
 		Blob blob = blobHolder.getBlob();
+		
+		transferVFS(blob,uriParams);
+
+		return input;
+	}
+	
+	private void transferVFS (Blob blob, String uriParams) throws Exception{
 		
 		FileSystemManager fsManager;
 		fsManager = VFS.getManager();
@@ -84,8 +84,6 @@ public class BlobExport {
 				blobFile.close();
 			}
 		}
-
-		return input;
 	}
 
 	protected FileSystemOptions findOpts(String uriParams)
@@ -100,7 +98,6 @@ public class BlobExport {
 
 	protected static FileSystemOptions initFTP() {
 		FileSystemOptions opts = new FileSystemOptions();
-
 		FtpFileSystemConfigBuilder configBuilder = FtpFileSystemConfigBuilder
 				.getInstance();
 		configBuilder.setUserDirIsRoot(opts, true);

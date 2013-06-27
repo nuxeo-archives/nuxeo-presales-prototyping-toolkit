@@ -1,0 +1,8 @@
+<component name="org.nuxeo.presales.prototyping.toolkit.operations.ftp.Export">
+
+  <extension target="org.nuxeo.ecm.core.operation.OperationServiceComponent"
+    point="operations" >
+      <operation class="org.nuxeo.presales.prototyping.toolkit.operations.ftp.ExportBlob" />
+   </extension>
+    
+</component>
