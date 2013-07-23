@@ -11,6 +11,7 @@
  */
 package org.nuxeo.presales.prototyping.toolkit.operations.notification;
 
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;

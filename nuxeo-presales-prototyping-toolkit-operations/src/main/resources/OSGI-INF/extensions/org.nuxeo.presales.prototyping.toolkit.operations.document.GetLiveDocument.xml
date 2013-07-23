@@ -1,8 +1,0 @@
-<component name="org.nuxeo.presales.toolkit.operations.document.GetLiveDocument">
-
-  <extension target="org.nuxeo.ecm.core.operation.OperationServiceComponent"
-    point="operations" >
-      <operation class="org.nuxeo.presales.prototyping.toolkit.operations.document.GetLiveDocument" />
-   </extension>
-    
-</component>
