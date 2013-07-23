@@ -1,0 +1,27 @@
+<package type="addon" name="nuxeo-adullact-webdelib" version="@VERSION@">
+  <title>Nuxeo Presales Toolkit</title>
+  <description>
+    <p>This addon activate Presales Toolkit addon.</p>
+    <p>This addon add new features as explained <a href="https://github.com/nuxeo/nuxeo-presales-prototyping-toolkit">here</a></p>
+  </description>
+  <home-page>https://github.com/nuxeo/nuxeo-presales-prototyping-toolkit</home-page>
+  <vendor>Nuxeo</vendor>
+  <installer restart="false" />
+  <uninstaller restart="false" />
+  <hotreload-support>true</hotreload-support>
+  <require-terms-and-conditions-acceptance>false</require-terms-and-conditions-acceptance>
+  <nuxeo-validation>waiting_nuxeo_certified</nuxeo-validation>
+  <production-state>development</production-state>
+  <supported>false</supported>
+  <platforms>
+    <platform>cap-@VERSION@</platform>
+    <platform>cap-5.7.1</platform>
+  </platforms>
+<!-- 
+  <dependencies>
+    <package>nuxeo-adullact-service:@VERSION@</package>
+  </dependencies>
+ -->
+  <license>LGPL</license>
+  <license-url>http://www.gnu.org/licenses/lgpl.html</license-url>
+</package>
