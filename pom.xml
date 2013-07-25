@@ -18,7 +18,6 @@
     <module>nuxeo-presales-prototyping-toolkit-template-rendition-publisher</module>
     <module>nuxeo-presales-prototyping-toolkit-video</module>
     <module>nuxeo-presales-prototyping-toolkit-mp</module>
-    <!-- module>nuxeo-presales-prototyping-toolkit-actions</module-->
   </modules>
   <properties>
     <nuxeo.presales.prototyping.toolkit.version>5.7-SNAPSHOT</nuxeo.presales.prototyping.toolkit.version>
@@ -32,10 +31,10 @@
     </dependency>
     <dependency>
       <groupId>org.nuxeo.presales</groupId>
-      <artifactId>nuxeo-presales-prototyping-toolkit-actions</artifactId>
+      <artifactId>nuxeo-presales-prototyping-toolkit-template-rendition-publisher</artifactId>
       <version>${nuxeo.presales.prototyping.toolkit.version}</version>
     </dependency>
-    <dependency>
+   <dependency>
       <groupId>org.nuxeo.presales</groupId>
       <artifactId>nuxeo-presales-prototyping-toolkit-we-publication</artifactId>
       <version>${nuxeo.presales.prototyping.toolkit.version}</version>

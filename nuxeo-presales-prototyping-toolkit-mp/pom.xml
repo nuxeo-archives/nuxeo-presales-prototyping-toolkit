@@ -15,11 +15,7 @@
       <groupId>org.nuxeo.presales</groupId>
       <artifactId>nuxeo-presales-prototyping-toolkit-operations</artifactId>
     </dependency>
-    <!--dependency>
-      <groupId>org.nuxeo.presales</groupId>
-      <artifactId>nuxeo-presales-prototyping-toolkit-actions</artifactId>
-    </dependency-->
-    <dependency>
+   <dependency>
       <groupId>org.nuxeo.presales</groupId>
       <artifactId>nuxeo-presales-prototyping-toolkit-we-publication</artifactId>
     </dependency>
@@ -27,9 +23,13 @@
       <groupId>org.nuxeo.presales</groupId>
       <artifactId>nuxeo-presales-prototyping-toolkit-video</artifactId>
     </dependency>
-    <dependency>
+     <dependency>
       <groupId>org.nuxeo.presales</groupId>
       <artifactId>nuxeo-presales-prototyping-toolkit-images</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.nuxeo.presales</groupId>
+      <artifactId>nuxeo-presales-prototyping-template-rendition-publisher</artifactId>
     </dependency>
   </dependencies>
   <build>
