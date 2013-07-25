@@ -4,11 +4,10 @@
 	<parent>
     <groupId>org.nuxeo.presales</groupId>
     <artifactId>nuxeo-presales-prototyping-toolkit-parent</artifactId>
-    <version>5.7-SNAPSHOT</version>
+    <version>5.7.2-SNAPSHOT</version>
   </parent>
 	<groupId>org.nuxeo.presales</groupId>
-	<artifactId>nuxeo-presales-toolkit-publish-template-operation
-	</artifactId>
+	<artifactId>nuxeo-presales-prototyping-toolkit-template-rendition-publisher</artifactId>
 	<name>nuxeo-presales-toolkit-publish-template-operation</name>
 	<description />
 	<dependencies>
