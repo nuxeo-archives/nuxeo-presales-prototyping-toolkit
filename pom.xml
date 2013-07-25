@@ -50,6 +50,11 @@
       <artifactId>nuxeo-presales-prototyping-toolkit-images</artifactId>
       <version>${nuxeo.presales.prototyping.toolkit.version}</version>
     </dependency>
+    <dependency>
+      <groupId>org.nuxeo.presales</groupId>
+      <artifactId>nuxeo-presales-prototyping-toolkit-mp</artifactId>
+      <version>${nuxeo.presales.prototyping.toolkit.version}</version>
+    </dependency>
     </dependencies>
   </dependencyManagement>
   <repositories>

@@ -15,10 +15,10 @@
       <groupId>org.nuxeo.presales</groupId>
       <artifactId>nuxeo-presales-prototyping-toolkit-operations</artifactId>
     </dependency>
-    <dependency>
+    <!--dependency>
       <groupId>org.nuxeo.presales</groupId>
       <artifactId>nuxeo-presales-prototyping-toolkit-actions</artifactId>
-    </dependency>
+    </dependency-->
     <dependency>
       <groupId>org.nuxeo.presales</groupId>
       <artifactId>nuxeo-presales-prototyping-toolkit-we-publication</artifactId>
