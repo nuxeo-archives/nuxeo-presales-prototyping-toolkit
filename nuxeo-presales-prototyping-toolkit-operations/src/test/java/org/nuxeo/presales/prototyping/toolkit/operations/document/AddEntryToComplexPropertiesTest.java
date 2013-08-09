@@ -52,14 +52,11 @@ import org.nuxeo.runtime.test.runner.LocalDeploy;
 	"org.nuxeo.ecm.platform.url.api",
 	"org.nuxeo.ecm.platform.url.core",
 	"org.nuxeo.ecm.platform.types.api",
-	"org.nuxeo.ecm.platform.types.core",
 	"org.nuxeo.ecm.platform.notification.core:OSGI-INF/NotificationService.xml",
 	"org.nuxeo.ecm.automation.test",
 	"org.nuxeo.presales.prototyping.toolkit.operation.test",
 "org.nuxeo.presales.prototyping.toolkit.operation"})
 
-@LocalDeploy({ 
-"org.nuxeo.presales.prototyping.toolkit.operation.test:OSGI-INF/core-type-contrib.xml"})
 @Features(EmbeddedAutomationServerFeature.class)
 @Jetty(port = 18080)
 @RepositoryConfig(cleanup = Granularity.METHOD)
