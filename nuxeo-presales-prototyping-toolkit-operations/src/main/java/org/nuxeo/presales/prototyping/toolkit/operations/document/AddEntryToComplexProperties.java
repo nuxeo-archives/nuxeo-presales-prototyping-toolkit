@@ -26,7 +26,7 @@ import org.nuxeo.ecm.core.schema.types.ListType;
 /**
  * @author fvadon
  */
-@Operation(id=AddEntryToComplexProperties.ID, category=Constants.CAT_DOCUMENT, label="AddComplexPropertyFromJsonStrong", description="This operation can add new fields to a multivalued complex metadata. The value parameter is a String containing the JSON list of new value for the metadata given in xpath")
+@Operation(id=AddEntryToComplexProperties.ID, category=Constants.CAT_DOCUMENT, label="Add Complex Property From Json String", description="This operation can add new fields to a multivalued complex metadata. The value parameter is a String containing the JSON list of new value for the metadata given in xpath")
 public class AddEntryToComplexProperties {
 
     public static final String ID = "AddComplexProperty";
