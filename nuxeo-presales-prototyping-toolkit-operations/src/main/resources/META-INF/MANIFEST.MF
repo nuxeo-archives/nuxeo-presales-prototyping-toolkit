@@ -5,7 +5,9 @@ Bundle-ClassPath: .
 Bundle-Version: 1.0.qualifier
 Bundle-Name: nuxeo-presales-prototyping-toolkit-operations
 Nuxeo-Component: OSGI-INF/extensions/org.nuxeo.presales.prototyping.to
- olkit.operations.notification.AdvancedSendEmail.xml
+ olkit.operations.notification.AdvancedSendEmail.xml,OSGI-INF/extensio
+ ns/org.nuxeo.presales.prototyping.toolkit.operations.document.AddEntr
+ yToComplexProperties.xml
 Bundle-ManifestVersion: 2
 Bundle-SymbolicName: org.nuxeo.presales.prototyping.toolkit.operation
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6

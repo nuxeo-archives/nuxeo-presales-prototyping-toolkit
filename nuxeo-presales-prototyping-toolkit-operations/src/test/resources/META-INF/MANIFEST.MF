@@ -4,4 +4,4 @@ Bundle-Name: Nuxeo Presales Toolkit Test
 Bundle-SymbolicName: org.nuxeo.presales.prototyping.toolkit.operation.test;singleton:=true
 Bundle-Vendor: Nuxeo
 Bundle-Version: 1.0.0
-Nuxeo-Component: doc-type-contrib.xml
+Nuxeo-Component: OSGI-INF/doc-type-contrib.xml, OSGI-INF/core-types-contrib.xml
