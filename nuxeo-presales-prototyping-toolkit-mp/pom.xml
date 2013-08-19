@@ -23,10 +23,10 @@
       <groupId>org.nuxeo.presales</groupId>
       <artifactId>nuxeo-presales-prototyping-toolkit-video</artifactId>
     </dependency>
-     <dependency>
+    <!--dependency>
       <groupId>org.nuxeo.presales</groupId>
       <artifactId>nuxeo-presales-prototyping-toolkit-images</artifactId>
-    </dependency>
+    </dependency-->
     <dependency>
       <groupId>org.nuxeo.presales</groupId>
       <artifactId>nuxeo-presales-prototyping-toolkit-template-rendition-publisher</artifactId>

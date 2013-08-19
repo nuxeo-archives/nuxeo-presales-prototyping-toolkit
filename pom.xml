@@ -14,7 +14,7 @@
   <modules>
     <module>nuxeo-presales-prototyping-toolkit-operations</module>
     <module>nuxeo-presales-prototyping-toolkit-we-publication</module>
-    <module>nuxeo-presales-prototyping-toolkit-images</module>
+    <!--module>nuxeo-presales-prototyping-toolkit-images</module-->
     <module>nuxeo-presales-prototyping-toolkit-template-rendition-publisher</module>
     <module>nuxeo-presales-prototyping-toolkit-video</module>
     <module>nuxeo-presales-prototyping-toolkit-mp</module>
