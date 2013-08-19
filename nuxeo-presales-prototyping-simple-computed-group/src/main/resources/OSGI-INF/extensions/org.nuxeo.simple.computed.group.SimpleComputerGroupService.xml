@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+
+<component name="org.nuxeo.simple.computed.group.SimpleComputerGroupService" version="1.0">
+  <require>org.nuxeo.ecm.platform.computedgroups.ComputedGroupsServiceImpl</require>
+
+  <implementation class="org.nuxeo.simple.computed.group.SimpleComputerGroupService" />
+
+  <service>
+      <provide interface="org.nuxeo.simple.computed.group.SimpleComputerGroupService" />
+  </service>
+
+  <extension-point name="computer">
+        <object
+            class="org.nuxeo.simple.computed.group.UserMetadataComputerGroupDescriptor" />
+        <object
+            class="org.nuxeo.simple.computed.group.DocumentModelMetadataComputerGroupDescriptor" />
+  </extension-point>
+
+</component>

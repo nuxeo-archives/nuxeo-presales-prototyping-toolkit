@@ -18,12 +18,19 @@
     <module>nuxeo-presales-prototyping-toolkit-template-rendition-publisher</module>
     <module>nuxeo-presales-prototyping-toolkit-video</module>
     <module>nuxeo-presales-prototyping-toolkit-mp</module>
+    <module>nuxeo-presales-prototyping-simple-computed-group</module>
   </modules>
   <properties>
     <nuxeo.presales.prototyping.toolkit.version>5.6.0-HF21-SNAPSHOT</nuxeo.presales.prototyping.toolkit.version>
   </properties>
   <dependencyManagement>
     <dependencies>
+    <dependency>
+      <groupId>org.nuxeo.presales</groupId>
+      <artifactId>nuxeo-presales-prototyping-simple-computed-group</artifactId>
+      <version>${nuxeo.presales.prototyping.toolkit.version}</version>
+    </dependency>
+
     <dependency>
       <groupId>org.nuxeo.presales</groupId>
       <artifactId>nuxeo-presales-prototyping-toolkit-operations</artifactId>

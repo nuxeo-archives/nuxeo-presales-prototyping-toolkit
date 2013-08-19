@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-Vendor: Nuxeo
+Bundle-ActivationPolicy: lazy
+Bundle-ClassPath: .
+Bundle-Version: 5.6
+Bundle-Name: nuxeo-simple-computed-group
+Nuxeo-Component: OSGI-INF/extensions/org.nuxeo.simple.computed.group.S
+ impleComputerGroupService.xml
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: nuxeo-simple-computed-group
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+
