@@ -1,4 +1,4 @@
-<package type="addon" name="nuxeo-adullact-webdelib" version="@VERSION@">
+<package type="addon" name="nuxeo-presales-toolkit" version="@VERSION@">
   <title>Nuxeo Presales Toolkit</title>
   <description>
     <p>This addon activate Presales Toolkit addon.</p>
