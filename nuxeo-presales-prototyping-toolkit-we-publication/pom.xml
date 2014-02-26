@@ -4,7 +4,7 @@
   <parent>
     <groupId>org.nuxeo.presales</groupId>
     <artifactId>nuxeo-presales-prototyping-toolkit-parent</artifactId>
-    <version>5.7.3-SNAPSHOT</version>
+    <version>5.9.3-SNAPSHOT</version>
   </parent>
 
   <artifactId>nuxeo-presales-prototyping-toolkit-we-publication</artifactId>
@@ -26,7 +26,7 @@
 
     <dependency>
       <groupId>org.osgi</groupId>
-      <artifactId>osgi-core</artifactId>
+      <artifactId>org.osgi.core</artifactId>
     </dependency>
 
     <dependency>
