@@ -31,6 +31,10 @@
       <groupId>org.nuxeo.presales</groupId>
       <artifactId>nuxeo-presales-prototyping-toolkit-template-rendition-publisher</artifactId>
     </dependency>
+	<dependency>
+      <groupId>org.nuxeo.presales</groupId>
+      <artifactId>nuxeo-presales-prototyping-toolkit-fancybox</artifactId>
+    </dependency>
   </dependencies>
   <build>
     <plugins>

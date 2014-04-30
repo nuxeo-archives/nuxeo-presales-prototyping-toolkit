@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<component name="org.nuxeo.presales.prototyping.toolkit.fancybox.FancyBoxHelperBean">
+
+  <extension target="org.nuxeo.ecm.platform.actions.ActionService"
+    point="actions">
+
+    <action id="org.nuxeo.presales.prototyping.toolkit.fancybox.FancyBoxHelperBean" link="#{fancyBoxHelper.doGet}"
+      order="200" label="label.org.nuxeo.presales.prototyping.toolkit.fancybox.FancyBoxHelperBean"
+      icon="/icons/org.nuxeo.presales.prototyping.toolkit.fancybox.FancyBoxHelperBean-action.png">
+      <category>SUBVIEW_UPPER_LIST</category>
+      <filter-id>org.nuxeo.presales.prototyping.toolkit.fancybox.FancyBoxHelperBean</filter-id>
+    </action>
+  </extension>
+
+  <extension target="org.nuxeo.ecm.platform.actions.ActionService"
+    point="filters">
+
+    <filter id="org.nuxeo.presales.prototyping.toolkit.fancybox.FancyBoxHelperBean">
+      <rule grant="true">
+        <condition>#{fancyBoxHelper.accept()}</condition>
+      </rule>
+    </filter>
+
+  </extension>
+
+</component>

@@ -12,6 +12,7 @@ Feel free to use it or let's be inspired for your own code.
 * nuxeo-presales-prototyping-toolkit-template-rendition-publisher: An Automation operation that enable to publish template rendition. You can use this operation with the plugin : nuxeo template rendering
 * nuxeo-presales-prototyping-toolkit-video: An helper class (MediaInfoHelper) to call mediainfo -i on video blobs and parse the result.
 * nuxeo-presales-prototyping-toolkit-images: creates converters to images (PNG, add overlay...)
+* nuxeo-presales-prototyping-toolkit-fancybox: helpers which make it super simple to display a form in a fancybox and pass the values to an automation chain. 
 * resources are free to use resources for your Studio project (icons, background image, etc...)
 
 =========
