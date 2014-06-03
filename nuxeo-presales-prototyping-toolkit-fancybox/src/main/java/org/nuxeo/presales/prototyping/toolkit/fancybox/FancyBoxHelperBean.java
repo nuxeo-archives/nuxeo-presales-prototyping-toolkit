@@ -75,7 +75,7 @@ public class FancyBoxHelperBean implements Serializable {
 	        	service.run(ctx, automationChain);
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
-				e.printStackTrace();
+				log.error(e);
 			}
 			
             fictiveDocumentModel = null;
