@@ -9,3 +9,5 @@ This variable is an instance of the DocumentModel interface.
 
 This project is not unit-tested, please use with care
 
+#Known limitations
+If the automation chain bound to the fancybox contains a "Download File" operation, the fancybox won't be closed automatically at the end of the process   
