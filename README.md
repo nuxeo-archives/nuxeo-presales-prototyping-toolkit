@@ -1,3 +1,10 @@
+###IMPORTANT - 2014-07-09
+
+All this package and its sub-addons are deprecated. Everything has been moved to [nuxeo-labs](https://github.com/nuxeo/nuxeo-labs)
+
+The names of the misc. operations have not been modified, so you can replace nuxeo-presales-prototyping-toolkit with nuxeo-labs and your configuration will be ok: No need to change your Automation Chains using these operations.
+
+### Nuxeo Presales Prototyping Toolkit
 Nuxeo Presales team are daily producing Prototypes for our future customers to help them to imagine what can easily be done with the Nuxeo Platform. But some features recurrently are needed and missing into the Nuxeo Platform.
 
 So, into this toolkit for prototyping projects, we try to capitalize all developments produced. 
